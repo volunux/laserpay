@@ -2,7 +2,7 @@
 
 Request with sample payload must be sent with a header "Content-Type:application/json" 
 
-**NB: Malformed JSON will result in error response** 
+**NB: Malformed JSON will result in error response and status code 400 (Bad Request)** 
 
 **LaserPay API is located at https://protected-mountain-90349.herokuapp.com/**
 
