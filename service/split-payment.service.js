@@ -5,7 +5,6 @@
 module.exports = {
 
   'processTransaction' : function(splitPayment) {
-    let trackers = [];
     let splitBreakdown = [];
     let ratio = 0;
     let ratioTracker = true;
@@ -20,28 +19,24 @@ module.exports = {
 
         let splitValue = infos[i].SplitValue;
         let splitType = infos[i].SplitType;
-        let actualVal = 0;
 
         if (splitType === 'FLAT' && lTracker === 0) {
-            actualVal = splitValue;
-            entity.Amount = actualVal;
+            entity.Amount = splitValue;
             splitBreakdown.push(entity);
-            splitPayment.Amount -= actualVal;
+            splitPayment.Amount -= entity.Amount;
         }
         else if (splitType === 'PERCENTAGE' && lTracker === 1) {
-            actualVal = (splitValue / 100) * splitPayment.Amount;
-            entity.Amount = actualVal;
+            entity.Amount = (splitValue / 100) * splitPayment.Amount;
             splitBreakdown.push(entity);
-            splitPayment.Amount -= actualVal;
+            splitPayment.Amount -= entity.Amount;
         }
         else if (splitType === 'RATIO') {
             if (ratioTracker) { ratio += splitValue; }
             else if (lTracker === 2) {
                 if (ratioBalance === 0) { ratioBalance = splitPayment.Amount; }
-                actualVal = (splitValue / ratio) * ratioBalance;
-                entity.Amount = actualVal;
+                entity.Amount = (splitValue / ratio) * ratioBalance;
                 splitBreakdown.push(entity);
-                splitPayment.Amount -= actualVal;
+                splitPayment.Amount -= entity.Amount;
              }
         }
 

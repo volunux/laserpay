@@ -11,3 +11,7 @@ Request with sample payload must be sent with a header "Content-Type:application
 ## Localhost: Response times is less than 15ms
 
 ## Heroku deployment: Response times at the time of testing is greater than 30ms
+
+To run on localhost, clone repo and cd in to directory, run "npm install" and "npm start subsequently"
+
+**NB: Localhost app runs on port 3000**
