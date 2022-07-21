@@ -24,13 +24,13 @@ module.exports = {
 
         if (splitType === 'FLAT' && lTracker === 0) {
             actualVal = splitValue;
-            entity.Amount = getWholeNumberOrFloat(actualVal);
+            entity.Amount = actualVal;
             splitBreakdown.push(entity);
             splitPayment.Amount -= actualVal;
         }
         else if (splitType === 'PERCENTAGE' && lTracker === 1) {
             actualVal = (splitValue / 100) * splitPayment.Amount;
-            entity.Amount = getWholeNumberOrFloat(actualVal);
+            entity.Amount = actualVal;
             splitBreakdown.push(entity);
             splitPayment.Amount -= actualVal;
         }
@@ -39,7 +39,7 @@ module.exports = {
             else if (lTracker === 2) {
                 if (ratioBalance === 0) { ratioBalance = splitPayment.Amount; }
                 actualVal = (splitValue / ratio) * ratioBalance;
-                entity.Amount = getWholeNumberOrFloat(actualVal);
+                entity.Amount = actualVal;
                 splitBreakdown.push(entity);
                 splitPayment.Amount -= actualVal;
              }
