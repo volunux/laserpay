@@ -5,3 +5,9 @@ Request with sample payload must be sent with a header "Content-Type:application
 **NB: Malformed JSON will result in error response** 
 
 **LaserPay API is located at https://protected-mountain-90349.herokuapp.com/**
+
+# Performance and Profiling
+
+## Localhost: Response times is less than 15ms
+
+## Heroku deployment: Response times at the time of testing is greater than 30ms
