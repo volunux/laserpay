@@ -2,4 +2,4 @@
 
 Request with sample payload must be sent with a header "Content-Type:application/json" 
 
-** NB: Malformed JSON will result in error response ** 
+**NB: Malformed JSON will result in error response** 
