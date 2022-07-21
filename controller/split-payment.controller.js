@@ -6,6 +6,6 @@ module.exports = {
 
   'compute': function (req, res, next) {
     let results = module.exports.service.processTransaction(req.body);
-    res.status(200).send(results);
+    res.status(200).json(results);
   }
 }
