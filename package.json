@@ -1,0 +1,25 @@
+{
+  "name": "laserpay",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": "16.14.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.2.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "cpx": "^1.5.0",
+    "eslint": "^8.11.0",
+    "nodemon": "^2.0.15"
+  }
+}
